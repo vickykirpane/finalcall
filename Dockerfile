@@ -1,20 +1,12 @@
-# Pull official Python base image
-FROM python:3.11-slim
-
-# Upgrade pip and essential tools
-RUN pip install --upgrade pip setuptools wheel
-
-# Install streamlit
+#pull base image
+FROM python:3.14-slim
+#install streamlit
 RUN pip install streamlit
-
-# Set working directory
+#set working directory
 WORKDIR /var
-
-# Copy your application file
+#copy file
 COPY etl1.py .
-
-# Expose Streamlit port
+#expose streamlit
 EXPOSE 8501
-
-# Run Streamlit app
+#run streamlit app 
 CMD ["streamlit", "run", "etl1.py"]
