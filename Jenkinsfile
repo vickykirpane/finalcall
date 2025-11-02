@@ -13,6 +13,7 @@ pipeline {
                 for /f %%i in ('docker ps -aq') do docker rm -f %%i
                 '''
             }
+        }
 
         stage('Build Image') {
             steps {
