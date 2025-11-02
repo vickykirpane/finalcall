@@ -5,5 +5,5 @@ data = {
     "status" : ["completed", "Processing", "Pending"]
    }
 df = pd.DataFrame (data)
-st.title("streamllit App")
+st.title("streamlit App")
 st.write(df)
