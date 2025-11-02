@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git url:'https://github.com/vickykirpane/finalcall.git', branch:'main'
+
+            }
+        }
+        stage('Build Image') {
+            steps {
+                'docker build -t myimage .'
+            }
+        }
+        stage('Create Container') {
+            steps {
+                'docker run -d -p 8501:8501 myimage'
+            }
+        }
+    }
+}
